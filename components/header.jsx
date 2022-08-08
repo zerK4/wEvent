@@ -4,12 +4,10 @@ import { FiLogOut } from "react-icons/fi";
 import Image from "next/image";
 
 export default function Header() {
-  const { submitLogout, logged, changeMode } = useAuthState();
+  const { submitLogout, logged } = useAuthState();
   const [user, setUser] = useState();
-  const [dark, setDark] = useState();
   useEffect(() => {
     setUser(logged);
-    setDark(logged?.darkMode);
   }, [logged]);
   return (
     <div
@@ -41,22 +39,6 @@ export default function Header() {
           >
             <FiLogOut />
           </button>
-          <div
-            onClick={() => {
-              changeMode(logged?._id, !dark);
-            }}
-            className={`w-[3rem] ${
-              dark
-                ? "bg-slate-600 after:absolute after:h-[1rem] after:w-[1rem] after:right-2 after:bg-slate-600 after:rounded-full"
-                : "bg-neutral-300"
-            } h-[1.5rem] rounded-xl border-2 ease-in-out duration-300 border-orange-400 relative flex  items-center px-1`}
-          >
-            <div
-              className={`h-[1rem] ${
-                dark ? "translate-x-5" : null
-              } w-[1rem] bg-orange-400 movement rounded-full `}
-            ></div>
-          </div>
         </div>
       </div>
     </div>

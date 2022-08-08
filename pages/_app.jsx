@@ -19,14 +19,13 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     logged ? fetchEvent(logged?._wCode?._ref) : null;
-    setSystemTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
   }, [logged]);
 
   return (
     <div className={`overflow-x-hidden min-h-screen overflow-y-auto `}>
       {isAuthenticated ? (
         <div
-          className={` flex min-h-screen dark:bg-black flex-col overflow-x-hidden overflow-y-auto pb-24`}
+          className={`flex min-h-screen flex-col overflow-x-hidden overflow-y-auto pb-24`}
         >
           <Header />
           <div
