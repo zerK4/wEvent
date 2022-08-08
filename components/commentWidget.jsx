@@ -100,7 +100,7 @@ export default function CommentWidget({ comment, users, id }) {
             />
           </div>
         ) : (
-          <div className="loader"></div>
+          <div className="loader w-6 h-6"></div>
         )}
         <form className="flex gap-2 w-full">
           <input

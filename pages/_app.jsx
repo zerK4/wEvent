@@ -12,12 +12,8 @@ function MyApp({ Component, pageProps }) {
   const { event, fetchEvent } = functionStore();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isRegistering, setIsRegistering] = useState(false);
-  const [systemTheme, setSystemTheme] = useState();
   useEffect(() => {
     logged?.userName ? setIsAuthenticated(true) : null;
-  }, [logged, submitLogout]);
-
-  useEffect(() => {
     logged ? fetchEvent(logged?._wCode?._ref) : null;
   }, [logged]);
 

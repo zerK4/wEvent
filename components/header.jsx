@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import useAuthState from "../store/authStore";
 import { FiLogOut } from "react-icons/fi";
+import { BiUserCircle } from "react-icons/bi";
 import Image from "next/image";
+import functionStore from "../store/functionStore";
 
 export default function Header() {
   const { submitLogout, logged } = useAuthState();
+  const { events } = functionStore();
   const [user, setUser] = useState();
   useEffect(() => {
     setUser(logged);
-  }, [logged]);
+  }, [logged, events]);
   return (
     <div
       className={`h-[2.5rem] border-b-[1px] flex items-center w-[full] px-2 ${
@@ -29,7 +32,9 @@ export default function Header() {
                 />
               </div>
             ) : (
-              <div className="loader h-6 w-6"></div>
+              <div className="flex items-center">
+                <BiUserCircle className="text-4xl text-neutral-700" />
+              </div>
             )}
             <p>{user?.userName}</p>
           </div>

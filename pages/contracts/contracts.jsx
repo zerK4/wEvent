@@ -19,7 +19,7 @@ export default function Contracts() {
   const [contract, setContract] = useState();
   useEffect(() => {
     fetchContracts(logged?.wCode?._ref);
-  }, [logged]);
+  }, []);
   useEffect(() => {
     setContract(contracts);
   }, [contracts]);

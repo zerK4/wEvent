@@ -58,9 +58,10 @@ export default function Register({ setIsRegistering }) {
     const { data } = await axios.post(`/api/auth/code`, {
       wCode: code,
     });
+    console.log(data);
     setCurrentEvent(data);
 
-    if (data) {
+    if (data !== "nf") {
       setValidated(true);
       setIsLoading(false);
     }
@@ -150,11 +151,16 @@ export default function Register({ setIsRegistering }) {
         </div>
       ) : (
         <div className="bg-white border-2 shadow-md shadow-black p-4 rounded-xl flex flex-col items-center gap-4">
-          <div className={`${isLoading ? "hidden" : "block"}`}>
+          <div className={`${isLoading ? "hidden" : "block"} relative`}>
             <div className={`${notFound ? "text-red-400" : null}`}>
               {notFound
                 ? "Ne pare rau, nu am gasit evenimentul, incercati din nou."
-                : "Te rog sa introduci codul nuntii."}
+                : "Te rog sa introduci codul evenimentului."}
+            </div>
+            <div className="absolute -top-16 text-neutral-500 select-none left-0 w-full">
+              Daca vrei doar sa incerci aplicatia, foloseste{" "}
+              <span className="text-red-500 font-bold">test-guest</span> ca si
+              cod.
             </div>
           </div>
           {isLoading ? (

@@ -12,7 +12,7 @@ import {
 import { FcInvite, FcApproval, FcClock, FcCancel } from "react-icons/fc";
 import Link from "next/link";
 
-export default function Guests() {
+export const Guests = () => {
   const { event, fetchEvent, removeUser, getOne, fetchGuests, guests } =
     functionStore();
   const { logged } = useAuthState();
@@ -20,7 +20,7 @@ export default function Guests() {
   const [currentGuests, setCurrentGuests] = useState();
   useEffect(() => {
     fetchGuests(currentEvent?._id);
-  }, [event]);
+  }, []);
   useEffect(() => {
     setCurrent(event);
     setCurrentGuests(guests);
@@ -142,4 +142,5 @@ export default function Guests() {
       </div>
     </div>
   );
-}
+};
+export default Guests;
