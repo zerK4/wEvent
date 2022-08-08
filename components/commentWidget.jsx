@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import useAuthState from "../store/authStore";
 import functionStore from "../store/functionStore";
+import { BiUserCircle } from "react-icons/bi";
 
 export default function CommentWidget({ comment, users, id }) {
   const { logged } = useAuthState();
@@ -100,7 +101,9 @@ export default function CommentWidget({ comment, users, id }) {
             />
           </div>
         ) : (
-          <div className="loader w-6 h-6"></div>
+          <div className="flex items-center">
+            <BiUserCircle className="text-4xl text-neutral-600" />
+          </div>
         )}
         <form className="flex gap-2 w-full">
           <input
