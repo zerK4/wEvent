@@ -33,6 +33,9 @@ export default function Login({ setIsRegistering }) {
         <div className="flex justify-between items-center w-[80%] mx-20">
           <div className="text-2xl text-neutral-700">
             Te rugam sa te conectezi.
+            <div className="text-sm">
+              Testing account: test@w-event.com | pw: test
+            </div>
           </div>
           <div className="">
             <div className="">
