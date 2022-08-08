@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     logged?.userName ? setIsAuthenticated(true) : null;
     logged ? fetchEvent(logged?._wCode?._ref) : null;
-  }, []);
+  }, [logged]);
 
   return (
     <div className={`overflow-x-hidden min-h-screen overflow-y-auto `}>
@@ -24,10 +24,8 @@ function MyApp({ Component, pageProps }) {
           className={`flex min-h-screen flex-col overflow-x-hidden overflow-y-auto pb-24`}
         >
           <Header />
-          <div
-            className={` flex xl:w-[70%] md:w-full w-full min-h-screen mx-auto py-10`}
-          >
-            <div className="sm:min-w-[5rem] w-0 md:min-w-[12rem] ease-in-out duration-300">
+          <div className={`flex lg:w-[70%] w-full min-h-screen mx-auto py-10`}>
+            <div className="sm:min-w-[5rem] w-0 md:min-w-[15rem] ease-in-out duration-300">
               <Sidebar />
             </div>
             <Component {...pageProps} />

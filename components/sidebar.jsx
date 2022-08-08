@@ -20,14 +20,14 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`md:w-[12rem] bg-white border-neutral-300 md:border-x-[1px] z-40 w-full flex justify-center md:inline fixed bottom-0 md:top-0 ease-in-out duration-300 md:min-h-screen p-2 border-2  `}
+      className={`md:w-[15rem] bg-slate-100 shadow-md shadow-black md:border-x-[1px] z-40 w-full flex justify-center md:inline fixed bottom-0 md:top-0 ease-in-out duration-300 md:min-h-screen p-2 border-x-2  `}
     >
       <div className="relative md:flex hidden text-2xl">wEvents</div>
       <div className={`md:pt-12 pt-4 ease-in-out duration-300`}>
         <div className="flex md:flex-col gap-2">
           <Link href="/">
             <div
-              className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md border-x-2 border-neutral-100 hover:bg-neutral-100 cursor-pointer ease-in-out duration-300`}
+              className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md hover:bg-slate-300 cursor-pointer ease-in-out duration-300`}
             >
               <AiFillHome className="text-3xl md:text-xl" />
               <span className={`${isOn ? "flex" : "hidden md:flex"} `}>
@@ -37,7 +37,7 @@ export default function Sidebar() {
           </Link>
           <Link href={`/guests/guests`} as={`/guests/guests`}>
             <div
-              className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md border-x-2 border-neutral-100 hover:bg-neutral-100 cursor-pointer ease-in-out duration-300`}
+              className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md hover:bg-slate-300 cursor-pointer ease-in-out duration-300`}
             >
               <MdGroups className="text-3xl md:text-xl" />
               <span className={`${isOn ? "flex" : "hidden md:flex"} `}>
@@ -47,7 +47,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/contracts/contracts">
             <div
-              className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md border-x-2 border-neutral-100 hover:bg-neutral-100 cursor-pointer ease-in-out duration-300`}
+              className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md hover:bg-slate-300 cursor-pointer ease-in-out duration-300`}
             >
               <HiDocumentDuplicate className="text-3xl md:text-xl" />
               <span className={`${isOn ? "flex" : "hidden md:flex"} `}>
@@ -56,7 +56,7 @@ export default function Sidebar() {
             </div>
           </Link>
           <div
-            className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md border-x-2 border-neutral-100 hover:bg-neutral-100 cursor-pointer ease-in-out duration-300`}
+            className={`link flex gap-2 items-center justify-center md:justify-start p-2 rounded-md hover:bg-slate-300 cursor-pointer ease-in-out duration-300`}
           >
             <MdPerson className="text-3xl md:text-xl" />
             <span className={`${isOn ? "flex" : "hidden md:flex"} `}>

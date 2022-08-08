@@ -1,30 +1,22 @@
 import React, { useEffect, useState } from "react";
 import useAuthState from "../../store/authStore";
 import functionStore from "../../store/functionStore";
-import {
-  AiOutlineCheck,
-  AiOutlineClose,
-  AiOutlineSearch,
-  AiFillDelete,
-  AiFillEdit,
-  AiOutlinePlus,
-} from "react-icons/ai";
+import { AiFillDelete, AiFillEdit, AiOutlinePlus } from "react-icons/ai";
 import { FaFileDownload } from "react-icons/fa";
-import { FcInvite, FcApproval, FcClock, FcCancel } from "react-icons/fc";
 import Link from "next/link";
 
 export default function Contracts() {
   const { logged } = useAuthState();
-  const { contracts, fetchContracts, deleteContract } = functionStore();
+  const { event, contracts, fetchContracts, deleteContract } = functionStore();
   const [contract, setContract] = useState();
   useEffect(() => {
     fetchContracts(logged?.wCode?._ref);
-  }, []);
+  }, [logged]);
   useEffect(() => {
     setContract(contracts);
-  }, []);
+  }, [event]);
   return (
-    <div className="px-2 w-full lg:w-fit flex flex-col items-center">
+    <div className="px-2 w-full  lg:w-fit flex flex-col items-center">
       <div className="h-[3rem] w-full border-b-2 flex items-center justify-between">
         <div className="">Contracte</div>
         <Link href={`/contracts/newContract`}>

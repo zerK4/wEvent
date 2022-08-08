@@ -11,14 +11,12 @@ export default function Header() {
   const [user, setUser] = useState();
   useEffect(() => {
     setUser(logged);
-  }, [logged, events]);
+  }, []);
   return (
     <div
-      className={`h-[2.5rem] border-b-[1px] flex items-center w-[full] px-2 ${
-        logged ? "border-neutral-700" : "border-neutral-400"
-      }`}
+      className={`h-[3rem] border-b-[1px] flex items-center bg-slate-100 w-[full] px-2 shadow-sm shadow-slate-500`}
     >
-      <div className="lg:w-[62rem] w-full mx-auto flex items-center justify-end">
+      <div className="lg:w-[50rem] w-full mx-auto flex items-center justify-end">
         <div className="flex items-center gap-2">
           <div className="flex gap-2 items-center">
             {user?.profileImage?.asset?.url ? (

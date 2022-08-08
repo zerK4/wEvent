@@ -24,13 +24,13 @@ export default function Home() {
     setCurrent(event);
   }, [posts]);
   return (
-    <div className={`min-h-screen w-full lg:w-full px-1 md:px-4`}>
+    <div className={`min-h-screen w-full px-1 md:px-4`}>
       <Head>
         <title>Event Planer</title>
         <meta name="description" content="Wedding planner" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="md:w-[80%] w-full flex flex-col items-center gap-2">
+      <div className="w-full lg:w-full xl:w-[50rem] flex flex-col items-center gap-2">
         <div className="w-full flex flex-col -mt-6 mb-6 items-center">
           <NewPost />
         </div>

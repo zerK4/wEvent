@@ -37,4 +37,7 @@
   .movement {
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0, 1.775);
   }
+  .dark {
+    background: #000;
+  }
 }
