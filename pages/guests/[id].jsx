@@ -46,7 +46,7 @@ const Profile = ({ id }) => {
   return (
     <div className="px-4 md:w-[40rem] w-full">
       <div className="pb-1 mb-3 border-b-2 flex items-center justify-between">
-        <div className="">{name}'s invite</div>
+        <div className="">Invitatie {name}</div>
         <div className="">
           <button
             onClick={() => updateFun()}
