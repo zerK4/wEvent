@@ -22,7 +22,7 @@ export default function Contracts() {
   }, []);
   useEffect(() => {
     setContract(contracts);
-  }, [contracts]);
+  }, []);
   return (
     <div className="px-2 w-full lg:w-fit flex flex-col items-center">
       <div className="h-[3rem] w-full border-b-2 flex items-center justify-between">

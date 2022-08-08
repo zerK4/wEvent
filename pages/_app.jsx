@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     logged?.userName ? setIsAuthenticated(true) : null;
     logged ? fetchEvent(logged?._wCode?._ref) : null;
-  }, [logged]);
+  }, []);
 
   return (
     <div className={`overflow-x-hidden min-h-screen overflow-y-auto `}>

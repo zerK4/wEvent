@@ -19,16 +19,11 @@ export const Guests = () => {
   const [currentEvent, setCurrent] = useState();
   const [currentGuests, setCurrentGuests] = useState();
   useEffect(() => {
-    fetchGuests(currentEvent?._id);
+    fetchGuests(logged?.wCode?._ref);
   }, []);
   useEffect(() => {
-    setCurrent(event);
     setCurrentGuests(guests);
   }, [guests]);
-
-  useEffect(() => {
-    fetchEvent(logged?.wCode?._ref);
-  }, []);
 
   return (
     <div className="p-6 w-full lg:w-fit flex flex-col gap-2">
